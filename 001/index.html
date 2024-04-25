@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Teste de Projeto 01</title>
+   <style>
+      body {
+         height: 98vh;
+         width: 98vw;
+         position: relative;
+         background-color: hsl(0, 0%, 15%);
+         transition: 0.2s;
+      }
+
+      body.Clicado {
+         background-color: #fff;
+         transition: 0.2s;
+      }
+
+      div {
+         position: relative;
+         display: flex;
+         background: 0;
+         top: 50%;
+         left: 50%;
+         translate: -50% -50%;
+         
+         padding:  30px 0;
+         max-width: 500px;
+         height: 250px;
+         border-radius: 30px;
+         
+         justify-content: center;
+         flex-direction: column;
+         align-items: center;
+         
+         box-shadow: 1px 1px 20px black;
+
+         color: rgb(255, 255, 255);
+         font: 900 1.4em Arial;
+         text-align: center;
+         text-shadow: 2px 2px 8px black;
+
+         transition: 0.5s;
+      }
+
+      div.Clicado {
+         color: black;
+         text-shadow: none;
+      }
+
+      div > button {
+         width: 190px;
+         height: 50px;
+
+         border-radius: 30px;
+         border: 0;
+
+         font-size: 1.1em;
+
+         background-color: rgb(255, 40, 40);
+         color: white;
+
+         box-shadow: 3px 3px 9px black, inset 0.4px 0.4px 4px rgba(204, 0, 0, 0.692);
+
+         transition: 0.2s ease-out;
+      }
+
+      div > button:hover {
+         width: 100%;
+         height: 60px;
+
+         border-radius: 0;
+         transition: 0.2s;
+
+         font-size: 1.2em;
+         box-shadow: none;
+      }
+
+      div > button.Clicado {
+         background-color: #fff;
+      }
+
+
+
+      @media (max-width: 700px) {
+         * {
+            -webkit-tap-highlight-color: transparent;
+         }
+
+         body {
+            position: static;
+            translate: 0 0;
+
+            margin: auto;
+         }
+         
+         div {
+            box-shadow: none;
+            font-size: 1em;
+         }
+         
+         div > button {
+            width: 100vw;
+            height: 150px;
+
+            border-radius: 0;
+            transition: 0.2s;
+
+            font-size: 2em;
+            font-weight: bold;
+            box-shadow: 0 0 8px black;
+         }
+         
+         div > button:hover {
+            width: 100vw;
+            height: 150px;
+            
+            border-radius: 0;
+            transition: 0.2s;
+            
+            font-size: 2em;
+            font-weight: bold;
+            box-shadow: 0 0 8px black;
+         }
+         
+         ::-webkit-scrollbar {
+            display: none;
+         }
+      }
+
+   </style>
+</head>
+<body>
+   <div>
+      <h1>clique no botão abaixo</h1>
+      <button>CLIQUE EM MIM</button>
+   </div>
+
+   <script>
+      let botão = document.getElementsByTagName('button')[0]
+      botão.addEventListener("click", function() {
+         document.body.classList.toggle("Clicado")
+         document.getElementsByTagName('div')[0].classList.toggle("Clicado")
+      })
+   </script>
+</body>
+</html>
